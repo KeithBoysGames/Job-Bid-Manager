@@ -1,3 +1,4 @@
-Roman,blahblah@gmail.com,My house,,now,tomorrow,Roman,Done
-Roman,blahblah@gmail.com,My house,,now,tomorrow,Roman,Done
-Roman,blahblah@gmail.com,My house,,now,tomorrow,Roman,Done
+client_name,contact_info,location,job_details,start_date,estimated_enddate,onsite_workers,progress
+Karlie,blahblah@gmail.com,My house,,now,tomorrow,Roman,Done
+Roman,blahblah@gmail.com,My house,,now,tomorrow,Done
+Dustin,something@gmail.com,home,,sunday,monday,Pickle,Yup

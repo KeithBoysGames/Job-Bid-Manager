@@ -17,16 +17,18 @@
             <th>Onsite Workers</th>
             <th>Progress</th>
         </tr>
+        {% for job in jobs %}
         <tr>
-            <td>{{ jobs[0]['client_name'] }}</td>
-            <td>{{ jobs[0]['contact_info'] }}</td>
-            <td>{{ jobs[0]['location'] }}</td>
-            <td>{{ jobs[0]['job_details'] }}</td>
-            <td>{{ jobs[0]['start_date'] }}</td>
-            <td>{{ jobs[0]['estimated_enddate'] }}</td>
-            <td>{{ jobs[0]['onsite_workers'] }}</td>
-            <td>{{ jobs[0]['progress'] }}</td>
+            <td>{{ job.client_name }}</td>
+            <td>{{ job.contact_info }}</td>
+            <td>{{ job.location }}</td>
+            <td>{{ job.job_details }}</td>
+            <td>{{ job.start_date }}</td>
+            <td>{{ job.estimated_enddate }}</td>
+            <td>{{ job.onsite_workers }}</td>
+            <td>{{ job.progress }}</td>
         </tr>
+        {% endfor %}
     </table>
 
     <form action="/submit_job" method="POST">
