@@ -11,7 +11,7 @@ def read_csv(filename):
     
     with open(filename, 'r') as file:
         reader = csv.DictReader(file)
-        print(reader)
+        print(list(reader))
         return list(reader)
     
 @app.route('/')
