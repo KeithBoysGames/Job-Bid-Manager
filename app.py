@@ -17,7 +17,8 @@ def read_csv(filename):
 @app.route('/')
 def index():
     jobs = read_csv('jobs.csv')
-    return render_template('index.html', jobs=jobs)
+    bids = read_csv('bids.csv')
+    return render_template('index.html', jobs=jobs, bids=bids)
 
 
 @app.route('/submit_bid', methods=['POST'])
