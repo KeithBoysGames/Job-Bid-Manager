@@ -6,16 +6,18 @@ app = Flask(__name__)
 
 def read_csv(filename):
     if not os.path.exists(filename):
+        print("Error")
         return []
+    
     with open(filename, 'r') as file:
         reader = csv.DictReader(file)
+        print(reader)
         return list(reader)
     
 @app.route('/')
 def index():
     jobs = read_csv('jobs.csv')
-    bids = read_csv('bids.csv')
-    return render_template('index.html', jobs=jobs, bids=bids)
+    return render_template('index.html', jobs=jobs)
 
 
 @app.route('/submit_bid', methods=['POST'])
