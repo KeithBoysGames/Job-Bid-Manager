@@ -19,14 +19,9 @@
         </tr>
         {% for job in jobs %}
         <tr>
-            <td>{{ job.client_name }}</td>
-            <td>{{ job.contact_info }}</td>
-            <td>{{ job.location }}</td>
-            <td>{{ job.job_details }}</td>
-            <td>{{ job.start_date }}</td>
-            <td>{{ job.estimated_enddate }}</td>
-            <td>{{ job.onsite_workers }}</td>
-            <td>{{ job.progress }}</td>
+            {% for info in job %}
+            <td>{{info}}</td>
+            {% endfor %}
         </tr>
         {% endfor %}
     </table>
