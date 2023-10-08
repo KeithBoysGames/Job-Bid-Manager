@@ -2,6 +2,18 @@ from flask import Flask, render_template, request, redirect
 import csv
 import os
 
+class JobInfo:
+    def __init__(self, client_name, contact_info, location, job_details, start_date, estimated_enddate, onsite_workers, progress):
+        self.clientName = client_name
+        self.contactInfo = contact_info
+        self.location = location
+        self.jobDetails = job_details
+        self.startDate = start_date
+        self.estimatedEnddate = estimated_enddate
+        self.onsiteWorkers = onsite_workers
+        self.progress = progress
+
+
 app = Flask(__name__)
 
 def read_csv(filename):
@@ -55,22 +67,12 @@ def submit_job():
     onsite_workers = request.form.get('onsite_workers')
     progress = request.form.get('progress')
 
-    print(client_name, contact_info, location, job_details, start_date, estimated_enddate, onsite_workers, progress)
+    info = JobInfo(client_name, contact_info, location, job_details, start_date, estimated_enddate, onsite_workers, progress)
 
     # Write to jobs.csv
     with open('jobs.csv', mode='a', newline='') as file:
         writer = csv.writer(file)
-        writer.writerow(
-            {
-            client_name: client_name,
-            contact_info: contact_info,
-            location: location,
-            job_details: job_details,
-            start_date: start_date,
-            estimated_enddate: estimated_enddate,
-            onsite_workers: onsite_workers,
-            progress: progress
-            })
+        writer.writerow(info)
 
     return redirect('/')
 
