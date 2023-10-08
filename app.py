@@ -2,18 +2,6 @@ from flask import Flask, render_template, request, redirect
 import csv
 import os
 
-class JobInfo:
-    def __init__(self, client_name, contact_info, location, job_details, start_date, estimated_enddate, onsite_workers, progress):
-        self.clientName = client_name
-        self.contactInfo = contact_info
-        self.location = location
-        self.jobDetails = job_details
-        self.startDate = start_date
-        self.estimatedEnddate = estimated_enddate
-        self.onsiteWorkers = onsite_workers
-        self.progress = progress
-
-
 app = Flask(__name__)
 
 def read_csv(filename):
