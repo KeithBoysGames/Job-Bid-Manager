@@ -22,16 +22,9 @@
         <tbody>
             {% for job in jobs %}
             <tr>
-                <td>{{ job.client_name }}</td>
-                <td>{{ job.contact_info }}</td>
-                <td>{{ job.location }}</td>
-                <td>{{ job.job_details }}</td>
-                <td>{{ job.start_date }}</td>
-                <td>{{ job.estimated_enddate }}</td>
-                <td>{{ job.onsite_workers }}</td>
-                <td>{{ job.progress }}</td>
-                
-                <!-- ... and so on for each column -->
+                {% for info in job %}
+                <td>{{info}}</td>
+                {% endfor %}
             </tr>
             {% endfor %}
             <a href="{{ url_for('index') }}" class="btn btn-back">Back to Main</a>
